@@ -1,23 +1,26 @@
 #!/bin/bash
 # addigy-mdm-check.sh
-# Purpose: Validate macOS device MDM enrollment status using Addigy CLI/API (simulated for repo structure)
+# Purpose: Verify MDM enrollment and compliance of macOS endpoints via Addigy
 
-# === Config Section ===
 LOG_FILE="/var/log/addigy_mdm_check.log"
-HOSTNAME=$(scutil --get LocalHostName 2>/dev/null)
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
-# === Check Section ===
-check_mdm_enrollment() {
-    echo "[$TIMESTAMP] Checking Addigy MDM status for host: $HOSTNAME" | tee -a "$LOG_FILE"
-    
-    # Simulated command placeholder
-    # Replace this with actual Addigy API call or CLI tool if available
-    echo "Simulated: Checking MDM profile for compliance..." | tee -a "$LOG_FILE"
-    
-    # Simulated Result
-    echo "MDM Status: Enrolled (Simulated)" | tee -a "$LOG_FILE"
+function log_entry() {
+    echo "$TIMESTAMP - $1" | tee -a "$LOG_FILE"
 }
 
-# === Execute ===
-check_mdm_enrollment
+log_entry "Starting Addigy MDM compliance verification"
+
+# Simulated check: Device enrolled in MDM
+log_entry "Check: Device is enrolled in Addigy MDM"
+log_entry "Result: Enrolled (Simulated)"
+
+# Simulated check: MDM profile is installed
+log_entry "Check: MDM profile is present"
+log_entry "Result: Installed (Simulated)"
+
+# Simulated check: Device check-in within past 24 hours
+log_entry "Check: Device check-in status"
+log_entry "Result: Successful within SLA window (Simulated)"
+
+log_entry "Addigy MDM compliance check completed"
