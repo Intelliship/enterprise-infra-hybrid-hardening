@@ -1,0 +1,19 @@
+enterprise-infra-hybrid-hardening:
+  description: Simulated hybrid infrastructure with compliance validation scripts
+  components:
+    - file: scripts/deploy_infra_hardening.sh
+      purpose: Orchestrates deployment of hardening routines
+    - file: automation/entra-id-sync-status.ps1
+      purpose: Validates Entra ID group synchronization status
+    - file: automation/addigy-mdm-check.sh
+      purpose: Simulates Addigy MDM enrollment and compliance checks
+    - file: automation/fortinet-firewall-check.ps1
+      purpose: Simulates Fortinet policy compliance on network layer
+    - file: escalation/zero_trust_escalation_protocol.md
+      purpose: Documentation of zero trust escalation process
+    - file: monitoring/endpoint_health_check.ps1
+      purpose: Validates endpoint uptime and script availability
+    - file: identity/identity_provisioning_map.yaml
+      purpose: Describes role mapping and provisioning flow
+    - file: architecture/infra_baseline.md
+      purpose: Describes reference hybrid infrastructure layout
